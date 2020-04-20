@@ -10,7 +10,7 @@ django.setup()
 
 univ_instances = []
 
-with open('../../univ_data.csv', encoding='utf-8') as csvfile:
+with open('univ_data.csv', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     for data in reader:
         if data['name'] != '':

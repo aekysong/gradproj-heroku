@@ -8,7 +8,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'gradproj.settings')
 django.setup()
 
 report_instances = []
-with open('../../report_data.csv', encoding='utf-8') as csvfile:
+with open('report_data.csv', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     for data in reader:
         if data['pre_university'] != '' and data['major'] != '':

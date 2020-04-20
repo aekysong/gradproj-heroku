@@ -10,7 +10,7 @@ django.setup()
 
 notice_instances = []
 
-with open('../../office_notice_data.csv', encoding='utf-8') as csvfile:
+with open('office_notice_data.csv', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile)
     for data in reader:
         if data['no'] != '':
