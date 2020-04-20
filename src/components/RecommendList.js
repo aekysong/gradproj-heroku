@@ -38,7 +38,7 @@ class RecommendUniv extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://skku-exchange.herokuapp.com/api/universities')
+        axios.get('http://localhost:8000/api/universities')
             .then((res) => {
                 this.setState({
                     universities: this.getRandom(this.checkArray(res.data), 4),
@@ -48,7 +48,7 @@ class RecommendUniv extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
+        axios.get('http://localhost:8000/api/universities/search', {
             params: {
                 nation: newProps.data.interest_nation,
             }

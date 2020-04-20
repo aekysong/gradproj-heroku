@@ -169,7 +169,6 @@ REST_FRAMEWORK = {
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000',
-    'https://skku-exchange.herokuapp.com/',
 ]
 
 CSRF_COOKIE_NAME = "csrftoken"
