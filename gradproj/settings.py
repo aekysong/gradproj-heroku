@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u6gpxlz)9)e9()dns_c3h%wuvn8!$)fk9wtnzc!cv)6e3qk7&3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'skku-exchange.herokuapp.com']
 
