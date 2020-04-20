@@ -43,7 +43,7 @@ class UniversityList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://skku-exchange.herokuapp.com/api/universities')
+        axios.get('http://127.0.0.1:8000/api/universities')
             .then((res) => {
                 const pagedUniversities = pagingUniversities(res.data, 1);
                 const maxPage = parseInt(res.data.length / 8) + 1;
