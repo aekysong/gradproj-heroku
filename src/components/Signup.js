@@ -90,7 +90,7 @@ const emptySpace = (department, major, nation) => {
 }
 
 function idValid(ID) {
-    return axios.get('http://127.0.0.1:8000/api/validation/', {
+    return axios.get('https://skku-exchange.herokuapp.com/api/validation/', {
         params: { username: ID }
     }).then(res => {
         return res.status;

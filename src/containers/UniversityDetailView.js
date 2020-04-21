@@ -18,7 +18,7 @@ class UniversityDetail extends React.Component {
     async componentDidMount() {
         const universityID = this.props.match.params.universityID;
 
-        await axios.get(`http://127.0.0.1:8000/api/universities/${universityID}`)
+        await axios.get(`https://skku-exchange.herokuapp.com/api/universities/${universityID}`)
             .then((res) => {
                 this.setState({
                     university: res.data,
@@ -26,7 +26,7 @@ class UniversityDetail extends React.Component {
                 });
             })
 
-        await axios.get(`http://127.0.0.1:8000/api/universities/${universityID}/reports`)
+        await axios.get(`https://skku-exchange.herokuapp.com/api/universities/${universityID}/reports`)
             .then((res) => {
                 this.setState({
                     reports: res.data,

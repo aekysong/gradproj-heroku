@@ -46,7 +46,7 @@ class UniversitySearchList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/universities/search', {
+        axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
             params: {
                 nation: this.props.location.state.nation,
                 major: this.props.location.state.major,
@@ -67,7 +67,7 @@ class UniversitySearchList extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.location.state !== this.props.location.state) {
-            axios.get('http://127.0.0.1:8000/api/universities/search', {
+            axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
                 params: {
                     nation: this.props.location.state.nation,
                     major: this.props.location.state.major,

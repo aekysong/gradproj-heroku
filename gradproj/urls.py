@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/', include('community.api.urls')),
     path('api/', include('user.api.urls')),
     path('', index, name='index'),
+    path('search/', index, name='index'),
     path('universities/', index, name='index'),
     path('universities/<pk>/', index, name='index'),
     path('notices/', index, name='index'),

@@ -109,7 +109,7 @@ export default function PostForm(props) {
                 postObj['created_date'] = getDate();
                 console.log(postObj);
 
-                await axios.post("http://127.0.0.1:8000/api/posts/create/", postObj)
+                await axios.post("https://skku-exchange.herokuapp.com/api/posts/create/", postObj)
                     .then(res => {
                         if (res.status === 201) {
                             props.history.push('/posts');
@@ -121,7 +121,7 @@ export default function PostForm(props) {
                 postObj['date'] = props.data.created_date;
                 // console.log(props);
 
-                await axios.put(`http://127.0.0.1:8000/api/posts/${postID}/update/`, postObj)
+                await axios.put(`https://skku-exchange.herokuapp.com/api/posts/${postID}/update/`, postObj)
                     .then(res => {
                         if (res.status === 200) {
                             props.history.push(`/posts/${postID}`);

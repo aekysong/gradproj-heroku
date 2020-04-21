@@ -25,7 +25,7 @@ export default function HomeNotice() {
     const classes = useStyles();
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/notices')
+        axios.get('https://skku-exchange.herokuapp.com/api/notices')
             .then(({ data }) => {
                 setRows(data);
                 // console.log(data);

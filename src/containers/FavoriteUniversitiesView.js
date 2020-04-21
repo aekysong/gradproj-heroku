@@ -49,7 +49,7 @@ class FavoriteUniversitiesView extends React.Component {
             Authorization: `Token ${localStorage.getItem('token')}`,
         };
 
-        axios.get('http://127.0.0.1:8000/api/favorites')
+        axios.get('https://skku-exchange.herokuapp.com/api/favorites')
             .then((res) => {
                 const pagedUniversities = pagingUniversities(res.data, 1);
                 const maxPage = parseInt(res.data.length / 8) + 1;

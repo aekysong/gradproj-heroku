@@ -17,7 +17,7 @@ class CreatePost extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8000/api/posts/${this.props.match.params.postID}`)
+        axios.get(`https://skku-exchange.herokuapp.com/api/posts/${this.props.match.params.postID}`)
             .then((res) => {
                 this.setState({
                     no: res.data.id,

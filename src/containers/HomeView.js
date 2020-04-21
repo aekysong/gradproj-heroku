@@ -16,7 +16,7 @@ class HomeView extends React.Component {
       Authorization: `Token ${localStorage.getItem('token')}`,
     };
 
-    await axios.get('http://127.0.0.1:8000/api/user')
+    await axios.get('https://skku-exchange.herokuapp.com/api/user')
       .then((res) => {
         // console.log(res.data);
         this.setState({

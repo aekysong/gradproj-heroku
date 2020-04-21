@@ -40,7 +40,7 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/rest-auth/login/', {
+        axios.post('https://skku-exchange.herokuapp.com/rest-auth/login/', {
             username: username,
             password: password
         })
@@ -64,7 +64,7 @@ export const authLogin = (username, password) => {
 export const authSignup = (username, password, nickname, student_id, department, major, interest_nation) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://127.0.0.1:8000/api/signup/', {
+        axios.post('https://skku-exchange.herokuapp.com/api/signup/', {
             "user": {
                 "username": username,
                 "password": password,

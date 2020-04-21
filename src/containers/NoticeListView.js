@@ -10,7 +10,7 @@ class NoticeList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:8000/api/notices')
+        axios.get('https://skku-exchange.herokuapp.com/api/notices')
             .then((res) => {
                 this.setState({
                     notices: res.data

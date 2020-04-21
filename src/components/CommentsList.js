@@ -19,7 +19,7 @@ export default function Comments(props) {
             Authorization: `Token ${localStorage.getItem('token')}`,
         };
 
-        axios.get('http://127.0.0.1:8000/api/user')
+        axios.get('https://skku-exchange.herokuapp.com/api/user')
             .then(({ data }) => {
                 setUser(data.user);
             });
@@ -31,7 +31,7 @@ export default function Comments(props) {
             "Content-Type": "application/json",
             Authorization: `Token ${localStorage.getItem('token')}`
         };
-        axios.delete(`http://127.0.0.1:8000/api/comments/${commentID}/delete/`)
+        axios.delete(`https://skku-exchange.herokuapp.com/api/comments/${commentID}/delete/`)
             .then(res => {
                 if (res.status === 204) {
                     window.location.reload();

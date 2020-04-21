@@ -26,7 +26,7 @@ export default function HomePost() {
 
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/posts')
+        axios.get('https://skku-exchange.herokuapp.com/api/posts')
             .then(({ data }) => {
                 setRows(data);
                 // console.log(data);

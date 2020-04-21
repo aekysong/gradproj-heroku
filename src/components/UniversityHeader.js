@@ -42,7 +42,7 @@ export default function UniversityHeader(props) {
             Authorization: `Token ${localStorage.getItem('token')}`,
         };
 
-        axios.get('http://127.0.0.1:8000/api/favorites')
+        axios.get('https://skku-exchange.herokuapp.com/api/favorites')
             .then((res) => {
                 res.data.map((uni) => {
                     if (uni.university.name === props.data.name) {
@@ -90,7 +90,7 @@ export default function UniversityHeader(props) {
                 Authorization: `Token ${localStorage.getItem('token')}`,
             };
 
-            axios.post('http://127.0.0.1:8000/api/favorites/create/', {univ_name: props.data.name})
+            axios.post('https://skku-exchange.herokuapp.com/api/favorites/create/', {univ_name: props.data.name})
                 .then((res) => {
                     if (res.status === 201) {
                         alert('파견대학 즐겨찾기에 추가되었습니다.')
@@ -105,7 +105,7 @@ export default function UniversityHeader(props) {
                 Authorization: `Token ${localStorage.getItem('token')}`,
             };
 
-            axios.delete('http://127.0.0.1:8000/api/favorites/delete/', { data: {
+            axios.delete('https://skku-exchange.herokuapp.com/api/favorites/delete/', { data: {
                 univ_name: props.data.name
             }})
                 .then((res) => {

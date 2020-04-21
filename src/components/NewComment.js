@@ -59,7 +59,7 @@ export default function NewComment(props) {
 
         postObj['created_date'] = getDate();
 
-        await axios.post(`http://127.0.0.1:8000/api/comments/create/`, postObj)
+        await axios.post(`https://skku-exchange.herokuapp.com/api/comments/create/`, postObj)
             .then(res => {
                 if (res.status === 201) {
                     window.location.reload();

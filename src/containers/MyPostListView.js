@@ -19,7 +19,7 @@ class MyPostListView extends React.Component {
             Authorization: `Token ${localStorage.getItem('token')}`,
         };
 
-        axios.get('http://127.0.0.1:8000/api/myposts')
+        axios.get('https://skku-exchange.herokuapp.com/api/myposts')
             .then((res) => {
                 // console.log(res.data);
                 this.setState({

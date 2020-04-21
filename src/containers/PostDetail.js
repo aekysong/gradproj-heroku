@@ -20,7 +20,7 @@ class PostDetail extends React.Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8000/api/posts/${this.props.match.params.postID}`)
+        axios.get(`https://skku-exchange.herokuapp.com/api/posts/${this.props.match.params.postID}`)
             .then((res) => {
                 this.setState({
                     contents: Object.entries(res.data),
@@ -28,7 +28,7 @@ class PostDetail extends React.Component {
                 });
             })
 
-        axios.get(`http://localhost:8000/api/posts/${this.props.match.params.postID}/comments`)
+        axios.get(`https://skku-exchange.herokuapp.com/api/posts/${this.props.match.params.postID}/comments`)
             .then((res) => {
                 this.setState({
                     comments: Object.entries(res.data),
@@ -43,7 +43,7 @@ class PostDetail extends React.Component {
             Authorization: `Token ${localStorage.getItem('token')}`,
         };
 
-        axios.get('http://127.0.0.1:8000/api/user')
+        axios.get('https://skku-exchange.herokuapp.com/api/user')
             .then((res) => {
                 this.setState({
                     userId: res.data.user,
@@ -58,7 +58,7 @@ class PostDetail extends React.Component {
             "Content-Type": "application/json",
             Authorization: `Token ${this.props.token}`
         };
-        axios.delete(`http://127.0.0.1:8000/api/posts/${postID}/delete/`)
+        axios.delete(`https://skku-exchange.herokuapp.com/api/posts/${postID}/delete/`)
             .then(res => {
                 if (res.status === 204) {
                     this.props.history.push('/posts');
