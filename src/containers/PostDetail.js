@@ -84,7 +84,7 @@ class PostDetail extends React.Component {
                         </Grid>
                         {this.state.userId === this.state.contents[5][1]['user'] ?
                             <Grid container xs={3} justify={'flex-end'} alignItems={'flex-end'} direction={'row'}>
-                                <Button variant="contained" color="primary" href={`/posts/${this.props.match.params.postID}/update`} style={{ marginRight: '5%', marginBottom: '8%' }}>
+                                <Button variant="contained" color="primary" href={`/posts/${this.props.match.params.postID}/update`} style={{ marginRight: '5%', marginBottom: '8%', color:'white' }}>
                                     수정하기
                     </Button>
                                 <Button variant="contained" color="secondary" onClick={this.handleDelete} style={{ marginBottom: '8%', marginRight: '8%' }}>
