@@ -145,8 +145,8 @@ class UniversitySearchList extends React.Component {
                             </Paper>
                         </Grid>
                         <Grid container spacing={3} style={{ margin: 5, paddingLeft: 20 }}>
-                            <Typography variant="body2" style={{ marginRight: 10 }} onClick={this.handleChange.bind(this)}>만족도순</Typography>
-                            <Typography variant="body2" onClick={this.handleChange.bind(this)}>다녀온 인원순</Typography>
+                            <Typography variant="body2" style={{ marginRight: 10, cursor: 'pointer' }} onClick={this.handleChange.bind(this)}>만족도순</Typography>
+                            <Typography variant="body2" style={{ cursor: 'pointer' }} onClick={this.handleChange.bind(this)}>다녀온 인원순</Typography>
                         </Grid>
                         {this.state.currentUniversities.map(uni => {
                             // console.log(this.state.universities);

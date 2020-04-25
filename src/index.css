@@ -1,0 +1,16 @@
+a:link, a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1E90FF;
+}
+
+#mypage {
+    color: black;
+}
+
+#mypage:hover {
+    color: #1E90FF;
+}

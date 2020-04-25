@@ -22,7 +22,9 @@ function Navigation(props) {
   const classes = useStyles();
 
   const logoStyle = {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 'medium',
+    color: '#2E8B57'
   };
 
   const handleClick = event => {
@@ -48,7 +50,7 @@ function Navigation(props) {
         </Button>
       {props.isAuthenticated ?
         <Box component="span">
-          <Button color="primary" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+          <Button id='mypage' color="primary" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
             마이페이지
         </Button>
           <Menu

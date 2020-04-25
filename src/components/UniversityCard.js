@@ -59,7 +59,7 @@ export default function UniversityCard(props) {
   const keywords = props.data.keyword.split("'");
   const parsedKeywords = []
   for (var j = 0; j < keywords.length; j++) {
-    if (keywords[j] !== ', ' && keywords[j] !== '[' && keywords[j] !== ']' && keywords[j] !== '') {
+    if (keywords[j] !== ', ' && keywords[j] !== '[' && keywords[j] !== ']' && keywords[j] !== '' && keywords[j] !== '[]') {
       parsedKeywords.push(keywords[j]);
     }
   }

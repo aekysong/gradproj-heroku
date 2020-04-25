@@ -48,8 +48,8 @@ export default function Comments(props) {
                         <Grid container spacing={2}>
                             <Grid item xs={1} style={{ marginRight: 17 }}>
                                 <Grid container alignItems={"center"} direction={'column'}>
-                                    <Avatar />
-                                    <Typography variant="body1">{data[1]['author']['nickname']}</Typography>
+                                    <Avatar style={{ marginBottom: 15 }} />
+                                    <Typography variant="body2">{data[1]['author']['nickname']}</Typography>
                                 </Grid>
                             </Grid>
                             <Grid item xs={10}>
@@ -57,7 +57,7 @@ export default function Comments(props) {
                             </Grid>
                             <Grid container justify={'flex-end'} alignItems={'flex-start'} direction={'row'}>
                                 {data[1]['author']['user'] === user ?
-                                    <Typography variant="caption" style={{ marginRight: 5 }} onClick={(event) => handleDelete(event, data[1]['id'])}>삭제하기</Typography>
+                                    <Typography variant="caption" style={{ marginRight: 5, cursor: 'pointer' }} onClick={(event) => handleDelete(event, data[1]['id'])}>삭제하기</Typography>
                                     :
                                     <div></div>
                                 }
