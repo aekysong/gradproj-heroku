@@ -38,26 +38,21 @@ class RecommendUniv extends React.Component {
     }
 
     componentDidMount() {
-        console.log("check");
-        // axios.get('https://skku-exchange.herokuapp.com/api/universities')
-        //     .then((res) => {
-        //         this.setState({
-        //             universities: this.getRandom(this.checkArray(res.data), 4),
-        //             isLoading: false
-        //         });
-        //     })
-        if (this.props.data == null) {
-            axios.get('https://skku-exchange.herokuapp.com/api/universities')
+        console.log("check1");
+        axios.get('https://skku-exchange.herokuapp.com/api/universities')
             .then((res) => {
                 this.setState({
                     universities: this.getRandom(this.checkArray(res.data), 4),
                     isLoading: false
                 });
-            })
-        } else {
-            axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
+            })    
+    }
+
+    componentWillReceiveProps(newProps) {
+        console.log("check2");
+        axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
             params: {
-                nation: this.props.data.interest_nation,
+                nation: newProps.data.interest_nation,
             }
         })
             .then((res) => {
@@ -66,23 +61,7 @@ class RecommendUniv extends React.Component {
                     isLoading: false
                 });
             })
-        }
-        
     }
-
-    // componentWillReceiveProps(newProps) {
-    //     axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
-    //         params: {
-    //             nation: newProps.data.interest_nation,
-    //         }
-    //     })
-    //         .then((res) => {
-    //             this.setState({
-    //                 universities: this.getRandom(this.checkArray(res.data), 4),
-    //                 isLoading: false
-    //             });
-    //         })
-    // }
 
     render() {
         if (this.state.isLoading === true) {
