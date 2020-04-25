@@ -38,7 +38,6 @@ class RecommendUniv extends React.Component {
     }
 
     componentDidMount() {
-        console.log("check1");
         axios.get('https://skku-exchange.herokuapp.com/api/universities')
             .then((res) => {
                 this.setState({
@@ -49,8 +48,8 @@ class RecommendUniv extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        console.log("check2");
-        axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
+        if (newProps.data.length !== 0) {
+            axios.get('https://skku-exchange.herokuapp.com/api/universities/search', {
             params: {
                 nation: newProps.data.interest_nation,
             }
@@ -61,6 +60,7 @@ class RecommendUniv extends React.Component {
                     isLoading: false
                 });
             })
+        }
     }
 
     render() {
