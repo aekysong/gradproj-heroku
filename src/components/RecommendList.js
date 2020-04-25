@@ -38,13 +38,15 @@ class RecommendUniv extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://skku-exchange.herokuapp.com/api/universities')
+        if (this.props.data.length === 0) {
+            axios.get('https://skku-exchange.herokuapp.com/api/universities')
             .then((res) => {
                 this.setState({
                     universities: this.getRandom(this.checkArray(res.data), 4),
                     isLoading: false
                 });
-            })    
+            })  
+        }
     }
 
     componentWillReceiveProps(newProps) {

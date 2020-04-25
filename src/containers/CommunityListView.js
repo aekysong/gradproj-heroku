@@ -37,7 +37,7 @@ class CommunityList extends React.Component {
                         {localStorage.getItem("token") === null ?
                             <div></div>
                             :
-                            <Button variant="contained" color="primary" href='/create' style={{ margin: '12%' }}>
+                            <Button variant="contained" color="primary" href='/create' style={{ margin: '12%', color: 'white' }}>
                                 새 글 쓰기
                             </Button>
                         }
