@@ -90,7 +90,7 @@ export default function UniversityHeader(props) {
                 Authorization: `Token ${localStorage.getItem('token')}`,
             };
 
-            axios.post('https://skku-exchange.herokuapp.com/api/favorites/create/', {univ_name: props.data.name})
+            axios.post('https://skku-exchange.herokuapp.com/api/favorites/create/', { univ_name: props.data.name })
                 .then((res) => {
                     if (res.status === 201) {
                         alert('파견대학 즐겨찾기에 추가되었습니다.')
@@ -105,9 +105,11 @@ export default function UniversityHeader(props) {
                 Authorization: `Token ${localStorage.getItem('token')}`,
             };
 
-            axios.delete('https://skku-exchange.herokuapp.com/api/favorites/delete/', { data: {
-                univ_name: props.data.name
-            }})
+            axios.delete('https://skku-exchange.herokuapp.com/api/favorites/delete/', {
+                data: {
+                    univ_name: props.data.name
+                }
+            })
                 .then((res) => {
                     if (res.status === 204) {
                         alert('파견대학 즐겨찾기에서 삭제되었습니다.')
@@ -130,10 +132,13 @@ export default function UniversityHeader(props) {
                                     <Typography variant="h4" component="span" style={{ marginRight: 20 }}>
                                         {props.data.name}
                                     </Typography>
-                                    {isSaved ?
-                                        <Favorite id='full_heart' fontSize='large' color='secondary' onClick={handleClick} style={{ paddingTop: 7 }} />
+                                    {localStorage.getItem("token") === null ?
+                                        <div></div>
                                         :
-                                        <FavoriteBorder id='blank_heart' fontSize='large' color='secondary' onClick={handleClick} style={{ paddingTop: 7 }} />
+                                        isSaved ?
+                                            <Favorite id='full_heart' fontSize='large' color='secondary' onClick={handleClick} style={{ paddingTop: 7 }} />
+                                            :
+                                            <FavoriteBorder id='blank_heart' fontSize='large' color='secondary' onClick={handleClick} style={{ paddingTop: 7 }} />
                                     }
                                 </div>
                                 <Grid container spacing={1}>
